@@ -1,0 +1,171 @@
+import java .util.Scanner;
+import java .util.Random;
+public class MyFirstProgram {
+    public static void main(String[] args) {
+        Random input= new Random();
+        Scanner in=new Scanner(System.in);
+        String Email="qusai@mail.com";
+        String PassWord="1234";
+        System.out.println("Log in to the program");
+        System.out.println("Enter your Email here : ");
+        String em=in.next();
+        System.out.println(" Enter your password here : ");
+        String pass=in.next();
+     
+        if (Email.equals(em)){
+            if (PassWord.equals(pass)){int ch1=0;
+             int wallet=0,levelI=0, levelC=0,levelG=0,sum=0;
+             do{System.out.print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"+
+                               "\nWelcome to QuMo game"+"\n\t\tMy wallet :"+ wallet+
+                "\n 1- My Own \n 2- Games\n 3- Your level \n 4- Exite program "+
+                    "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    System.out.print("\n Enter the number of the transaction you want to perform : ");
+              byte ch=in.nextByte();switch(ch){
+                         case 1:int day=1;
+                        System.out.print("\nyour Email : "+Email 
+                      +  "\n your password :"+pass+
+                        "\n Time :"+day);
+                               day++;break;
+                        case 2:
+ System.out.print("1- island game \n2- Capitals game\n3- Guess the number game"+
+ "\nchoose the game you want to play it :" );
+ int game=in.nextInt();switch(game){
+  case 1://islend game
+  System.out .println("Welcome to my island:\n there are two doors chose one you want to open :\n1- red door \n2-blue door");int n,b;
+   n = in.nextInt();
+ if (n ==1 ){
+  System.out.println("Great ! new you are entered a room \nyou found three boxes : \n1-white \n2-green \n3-black\n which box you want to open?" );b=in.nextInt();
+     if (b==1)
+     System.out.println("Oops.you opened a box filled with snakes");
+    else if(b==2){
+     System.out.println("Congratulations, you got a jewelry!");wallet+=200;levelI +=1;}
+     else if(b==3)
+      System.out.println("sorry there are monkeys");
+      else
+       System.out.println("invalid choice!");}
+   else if (n==2)
+    System.out.println("Congratulations, you endered room is filled with women");
+    else System.out.println("invalid choice!");break;case 2://لعبة العواصم
+  sum=0;System.out.println(".مرحبا بك في لعبة اختيار عاصمة الدوله المذكورة\n"
+        +" [تتكون اللعبة من 5 اسئلة ايش هي عاصمة الدولة المذكوة 3 خيارات لكل سؤال وعليك ادخال رقم الاجابة الصحيحة:  ]");
+  System.out.print("ايش هي عاصمة الكويت؟\n(1-القاهرة- 2الرياض- 3الكويت )");
+ int n1=0;                     
+  n1=in.nextInt();
+       switch(n1){
+            case 1:
+            System.out.println("اجابة خاطئة");
+            break;
+            case 2:
+            System.out.println("اجابة خاطئة");
+            break;
+            case 3:
+            System.out.println("اجابة صحيحة");
+              sum+=2;
+           break;
+           default:
+           System.out.println("اختيارك غير موجود");
+       }
+        System.out.println("ايش هي عاصمة مصر  ؟\n(1-القاهرة  -2 صنعاء- 3 خرطوم  )");
+        int r=in.nextInt();
+       switch(r){
+            case 1:
+            System.out.println("اجابة صحيحة");
+            sum+=2;
+            break;
+            case 2:
+            System.out.println("اجابة خاطئة");
+            break;
+            case 3:
+            System.out.println("اجابة  خاطئة");
+           break;
+           default:
+           System.out.println("اختيارك غير موجود");
+       }
+        System.out.println("ايش هي عاصمة البرتغال  ؟\n(1- لشبونة - 2فيينتيان - 3طوكيو)");
+        int e=in.nextInt();
+       switch(e){
+            case 1:
+            System.out.println("اجابة صحيحة");
+            sum+=2;
+            break;
+            case 2:
+            System.out.println("اجابة خاطئة");
+            break;
+            case 3:
+            System.out.println("اجابة  خاطئة");
+           break;
+           default:
+           System.out.println("اختيارك غير موجود");
+       }
+        System.out.println("ايش هي عاصمة اليمن  ؟\n(1-لشبونة - 2 صنعاء -3 طوكيو)");
+        int z=in.nextInt();
+       switch(z){
+            case 2:
+            System.out.println("اجابة صحيحة");
+            sum+=2;
+            break;
+            case 1:
+            System.out.println("اجابة خاطئة");
+            break;
+            case 3:
+            System.out.println("اجابة  خاطئة");
+           break;
+           default:
+           System.out.println("اختيارك غير موجود");
+       }
+         System.out.println("ايش هي عاصمة فرنسا  ؟\n(1-لشبونة - 2 فيينتيان- 3 باريس )");
+        int m=in.nextInt();
+       switch(m){
+            case 3:
+            System.out.println("اجابة صحيحة");
+            sum+=2;
+            break;
+            case 2:
+            System.out.println("اجابة خاطئة");
+            break;
+            case 1:
+            System.out.println("اجابة  خاطئة");
+           break;
+        }wallet+=sum;
+         if (sum>=6){
+         System.out.println("لقد فزت و حصلت على "+sum+"من 10")   ;
+          levelC+=1;}
+                  else
+          System.out.println("لقد خسرت وحصلت على "+sum+"من 10");
+        break;
+                   case 3://لعبة تخمين الرقم
+ int g=10;
+    int  number=input.nextInt(g);
+        int guess ;
+        System.out.println("اهلا بك في لعبه التخمين \n اختر رقما بين 1و"+g +":" );
+      for(int attemps=1;attemps<=3;attemps++) {
+           System.out.println(" تخمين الرقم"+attemps+ ":") ;
+            guess= in.nextInt();
+            if(guess==number){
+              wallet+=20;
+              System.out.println(" تهانينا لقد خمنت الرقم الصحيح في "+attemps +"محاوله");
+             
+       break;}
+            else if (guess<number)
+                System.out.println("الرقم الذي تخيلته  اصغر ");
+                else if (guess>number)
+                    System.out.println("الرقم الذي تخيلته  اكبر");
+                  else 
+                    System.out.print(" حاول مره اخرى");}
+ break;
+       default:
+       System.out.print("invalid chocie ");
+      }break;
+                               case 3:
+                     System.out.print("your level in Islend Game :" +levelI+
+                    "\nyour level in Capital Game :" +levelC+
+                     "\nyour level in Guess the number game :"+levelG);
+                               break;
+               case 4:System.exit(4) ;break; 
+default:
+System.out.print("invalid choice")  ;                             
+                    }System.out.print("\nTo return to the main menu, press number 3 : ");
+              ch1=in.nextInt();
+             System.out.println("\r\r\r\r\r");}while(ch1==3);
+            }} 
+            else System.out.println("error in login!");}}
